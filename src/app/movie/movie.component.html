@@ -1,0 +1,19 @@
+<div (mouseover)="hover=false" (mouseleave)="hover=true" class="movie-card-wrapper">
+  <div class="row movie-card">
+      
+    <div class="col">
+      <div class="card">
+        <div class="card-image">
+          <img src={{apiPosterUrl}}{{movie.poster_path}}>
+        </div>
+        <div class="card-content">
+          <p>{{movie.title}}</p>
+          <p>{{movie.release_date}}</p>
+        </div>
+        <div *ngIf="!hover" class="hover">
+          <button class="btn btn-primary view-button">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
