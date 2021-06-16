@@ -1,9 +1,9 @@
 import { MoviesResponse } from './../models/moviesResponse';
-import { Movie } from './../models/movie';
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +20,12 @@ export class MovieService {
   getMovies(): Observable<MoviesResponse> {
     return this.http.get<MoviesResponse>(
       `${this.apiUrl}/movie/now_playing?api_key=${this.apiKey}`
+    );
+  }
+
+  getMovie(id): Observable<MoviesResponse> {
+    return this.http.get<MoviesResponse>(
+      `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
     );
   }
 }

@@ -1,4 +1,9 @@
+import { Movie } from './../models/movie';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MoviesResponse } from '../models/moviesResponse';
+import { MovieService } from '../services/movie.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-movie-details',
@@ -6,7 +11,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
-  constructor() {}
+  id: string;
+  movie;
 
-  ngOnInit(): void {}
+  apiPosterUrl: string = environment.apiPosterUrl;
+
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService
+  ) {}
+
+  ngOnInit(): void {
+    this.getId();
+    this.loadMovie(this.id);
+  }
+
+  getId() {
+    this.route.params.subscribe((result) => {
+      this.id = result.id;
+    });
+  }
+
+  private loadMovie(id) {
+    this.movieService.getMovie(id).subscribe((response: MoviesResponse) => {
+      this.movie = response;
+      console.log(this.movie);
+    });
+  }
 }

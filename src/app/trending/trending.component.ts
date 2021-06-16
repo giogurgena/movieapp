@@ -1,3 +1,4 @@
+import { MovieDetailsComponent } from './../movie-details/movie-details.component';
 import { Movie } from './../models/movie';
 import { MoviesResponse } from './../models/moviesResponse';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,7 @@ import { MovieService } from '../services/movie.service';
 })
 export class TrendingComponent implements OnInit {
   movies: Movie[] = [];
+
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
