@@ -1,4 +1,4 @@
-<div (mouseover)="hover=false" (mouseleave)="hover=true" class="movie-card-wrapper">
+<div class="movie-card-wrapper">
   <div class="row movie-card">
       
     <div class="col">
@@ -10,8 +10,8 @@
           <p>{{movie.title}}</p>
           <p>{{movie.release_date}}</p>
         </div>
-        <div *ngIf="!hover" class="hover">
-          <button class="btn btn-primary view-button">View Details</button>
+        <div class="hover" >
+          <button class="btn btn-primary view-button" routerLink="/movie-details/{{movie.id}}">View Details</button>
         </div>
       </div>
     </div>

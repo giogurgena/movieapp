@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TrendingComponent } from './trending/trending.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MovieComponent } from './movie/movie.component';
     TabsComponent,
     TrendingComponent,
     MovieComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,

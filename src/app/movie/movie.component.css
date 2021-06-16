@@ -27,6 +27,30 @@
   font-weight: bolder;
 }
 
-.hover {
+/* .hover button {
+  opacity: 0;
   transition: all 0.7s;
+}
+
+.hover button:hover {
+  opacity: 1;
+} */
+
+.card .card-image {
+  filter: none;
+  transition: all 0.7s;
+}
+
+.card:hover .card-image {
+  filter: grayscale(100%);
+  filter: blur(1px);
+}
+
+.card .view-button {
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.card:hover .view-button {
+  opacity: 1;
 }

@@ -10,11 +10,7 @@ import { environment } from 'src/environments/environment';
 export class MovieComponent {
   @Input() movie: Movie;
 
-  hover: boolean;
-
   apiPosterUrl: string = environment.apiPosterUrl;
 
-  constructor() {
-    this.hover = true;
-  }
+  constructor() {}
 }
