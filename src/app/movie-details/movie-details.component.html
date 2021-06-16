@@ -1,19 +1,27 @@
 
-<div class="container">
+<div class="container details">
   <div class="row">
-    <div class="col s6 m4 l2">
-      <div class="poster">
-        <img src={{apiPosterUrl}}{{movie.poster_path}}>
+    <div class="main-details">
+      <div class="col s6 m4 l2">
+        <div class="poster">
+          <img src={{apiPosterUrl}}{{movie.poster_path}}>
+        </div>
       </div>
-    </div>
-    <div class="col s6 m4 l4">
-      <div class="description">
-        <p>{{movie.overview}}</p>
+      <div class="col s6 m4 l4">
+        <div class="description">
+          <h3>{{movie.title}}</h3>
+          <div class="description-list">
+            <span class="genres" *ngFor="let genre of movie.genres"><h5>{{genre.name}}</h5></span>
+            <span>{{movie.release_date}}</span>
+            <span class="badge runtime">{{movie.runtime}} min</span>
+            <p class="description-text">{{movie.overview}}</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col s12 m4 l6">
-      <div class="back-image">
-        <img src={{apiPosterUrl}}{{movie.backdrop_path}} >
+      <div class="col s12 m4 l6">
+        <div class="back-image">
+          <img src={{apiPosterUrl}}{{movie.backdrop_path}} >
+        </div>
       </div>
     </div>
   </div>
