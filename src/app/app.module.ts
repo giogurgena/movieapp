@@ -15,6 +15,8 @@ import { TrendingComponent } from './trending/trending.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { PopularComponent } from './popular/popular.component';
+import { SearchComponent } from './search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { PopularComponent } from './popular/popular.component';
     MovieComponent,
     MovieDetailsComponent,
     PopularComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { PopularComponent } from './popular/popular.component';
     AppRoutingModule,
     MaterializeButtonModule,
     MaterializeCardModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

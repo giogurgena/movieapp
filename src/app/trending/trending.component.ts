@@ -22,7 +22,6 @@ export class TrendingComponent implements OnInit {
   // private loadMovies() {
   //   this.movieService.getMovies().subscribe((response: MoviesResponse) => {
   //     this.movies = response.results;
-  //     // console.log(this.movies);
   //   });
   // }
 }

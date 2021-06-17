@@ -11,13 +11,14 @@ import { MovieService } from '../services/movie.service';
 export class TabsComponent implements OnInit {
   trendingMovies: Movie[] = [];
   popularMovies: Movie[] = [];
-  swipeable = true;
+  movies: Movie[] = [];
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.loadTrendingMovies();
     this.loadPopularMovies();
+    this.loadMovies();
   }
 
   private loadTrendingMovies() {
@@ -35,7 +36,12 @@ export class TabsComponent implements OnInit {
       this.popularMovies.sort(function (a, b) {
         return b.popularity - a.popularity;
       });
-      console.log(this.popularMovies);
+    });
+  }
+
+  private loadMovies() {
+    this.movieService.getMovies().subscribe((response: MoviesResponse) => {
+      this.movies = response.results;
     });
   }
 }
