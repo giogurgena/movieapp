@@ -1,7 +1,16 @@
-<!-- <mat-tab-group dynamicHeight>
-  <mat-tab label="First"> Content 1 </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
-  <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group> -->
-
-<app-trending></app-trending>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s4"><a href="#trending" class="active">Trending</a></li>
+      <li class="tab col s4"><a href="#test2">Popular</a></li>
+      <li class="tab col s4"><a href="#test3">Search</a></li>
+    </ul>
+  </div>
+  <div id="trending" class="col s12">
+    <app-trending [movie]="movies"></app-trending>    
+  </div>
+  <div id="test2" class="col s12">
+    <app-popular [movie]="movies"></app-popular>
+  </div>
+  <div id="test3" class="col s12">Test 3</div>
+</div>

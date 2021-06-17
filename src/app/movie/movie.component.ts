@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./movie.component.css'],
 })
 export class MovieComponent {
-  @Input() movie: Movie;
+  @Input() movie;
 
   apiPosterUrl: string = environment.apiPosterUrl;
 
