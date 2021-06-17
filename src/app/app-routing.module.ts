@@ -7,11 +7,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: TrendingComponent },
   { path: 'movie-details/:id', component: MovieDetailsComponent },
-  // { path: 'trending', component: TrendingComponent },
-  // { path: 'popular', component: PopularComponent },
-  // { path: 'search', component: SearchComponent },
+  { path: 'popular', component: PopularComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({

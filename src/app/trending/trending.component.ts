@@ -1,7 +1,6 @@
-import { MovieDetailsComponent } from './../movie-details/movie-details.component';
-import { Movie } from './../models/movie';
-import { MoviesResponse } from './../models/moviesResponse';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie';
+import { MoviesResponse } from '../models/moviesResponse';
 import { MovieService } from '../services/movie.service';
 
 @Component({
@@ -10,18 +9,20 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./trending.component.css'],
 })
 export class TrendingComponent implements OnInit {
-  // movies: Movie[] = [];
-  @Input() movie;
+  movies: Movie[] = [];
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    // this.loadMovies();
+    this.loadTrendingMovies();
   }
 
-  // private loadMovies() {
-  //   this.movieService.getMovies().subscribe((response: MoviesResponse) => {
-  //     this.movies = response.results;
-  //   });
-  // }
+  private loadTrendingMovies() {
+    this.movieService.getTrending().subscribe((response: MoviesResponse) => {
+      this.movies = response.results;
+      this.movies.sort(function (a, b) {
+        return b.vote_average - a.vote_average;
+      });
+    });
+  }
 }

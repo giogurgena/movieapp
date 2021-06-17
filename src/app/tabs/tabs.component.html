@@ -1,46 +1,8 @@
-<!-- <div class="row">
-  <div class="col s12">
-    <ul class="tabs">
-      <li class="tab col s4"><a href="#trending" class="active">Trending</a></li>
-      <li class="tab col s4"><a href="#test2">Popular</a></li>
-      <li class="tab col s4"><a href="#test3">Search</a></li>
-    </ul>
-  </div>
-  <div id="trending" class="col s12">
-    <app-trending [movie]="movies"></app-trending>    
-  </div>
-  <div id="test2" class="col s12">
-    <app-popular [movie]="movies"></app-popular>
-  </div>
-  <div id="test3" class="col s12">Test 3</div>
-</div> -->
 
-
-<!-- <ul id="tabs-swipe-demo" class="tabs">
-  <li class="tab col s3"><a href="#trending">Trending</a></li>
-  <li class="tab col s3"><a href="#popular">Popular</a></li>
-  <li class="tab col s3"><a href="#search">Search</a></li>
-</ul>
-<div id="trending" class="col s12"><app-trending [movie]="trendingMovies"></app-trending></div>
-<div id="popular" class="col s12"><app-popular [movie]="popularMovies"></app-popular></div>
-<div id="search" class="col s12"><h1>search</h1></div> -->
-
-
-<ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-  <li class="tab"><a href="#trending">Trending</a></li>
-  <li class="tab"><a href="#popular">Popular</a></li>
-  <li class="tab"><a href="#search">Search</a></li>
-</ul>
-<div id="trending" class="col s12"><app-trending [movie]="trendingMovies"></app-trending></div>
-<div id="popular" class="col s12"><app-popular [movie]="popularMovies"></app-popular></div>
-<div id="search" class="col s12"><app-search [movie]="movies"></app-search></div>
-
-
-<!-- <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-  <li class="tab"><a routerLink="/trending" routerLinkActive="active">Trending</a></li>
-  <li class="tab"><a routerLink="/popular" routerLinkActive="active">Popular</a></li>
-  <li class="tab"><a routerLink="/search" routerLinkActive="active">Search</a></li>
-</ul> -->
-<!-- <div id="trending" class="col s12"><app-trending [movie]="trendingMovies"></app-trending></div>
-<div id="popular" class="col s12"><app-popular [movie]="popularMovies"></app-popular></div>
-<div id="search" class="col s12"><p>Search</p></div> -->
+<div class="container">
+  <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+    <li class="tab"><a routerLink="/" routerLinkActive="active">Trending</a></li>
+    <li class="tab"><a routerLink="/popular" routerLinkActive="active">Popular</a></li>
+    <li class="tab"><a routerLink="/search" routerLinkActive="active">Search</a></li>
+  </ul>
+</div>

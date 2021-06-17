@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie';
+import { MoviesResponse } from '../models/moviesResponse';
+import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-popular',
@@ -6,9 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./popular.component.css'],
 })
 export class PopularComponent implements OnInit {
-  @Input() movie;
+  movies: Movie[] = [];
 
-  constructor() {}
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadPopularMovies();
+  }
+
+  private loadPopularMovies() {
+    this.movieService.getPopular().subscribe((response: MoviesResponse) => {
+      this.movies = response.results;
+      this.movies.sort(function (a, b) {
+        return b.popularity - a.popularity;
+      });
+    });
+  }
 }

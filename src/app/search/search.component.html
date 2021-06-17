@@ -1,10 +1,12 @@
-<div class="search">
-  <input type="text" [(ngModel)]="title" (input)="Search()">
-  {{title}}
-  <div class="row ">
-    <div class="movies">
-      <app-movie *ngFor="let movie of movie"  [movie]="movie" class="col s6 m4 l2">
-    </app-movie>
+<div class="container">
+  <app-tabs></app-tabs>
+  <div class="search">
+    <input type="text" [(ngModel)]="title" (input)="Search()" placeholder="Search...">
+    <div class="row">
+      <div class="movies">
+        <app-movie *ngFor="let movie of movies"  [movie]="movie" class="col s6 m4 l2">
+      </app-movie>
+      </div>
     </div>
   </div>
 </div>
