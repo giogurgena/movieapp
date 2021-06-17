@@ -14,6 +14,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TrendingComponent } from './trending/trending.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { PopularComponent } from './popular/popular.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     TrendingComponent,
     MovieComponent,
     MovieDetailsComponent,
+    PopularComponent,
   ],
   imports: [
     BrowserModule,

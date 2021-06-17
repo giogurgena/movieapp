@@ -9,7 +9,9 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./tabs.component.css'],
 })
 export class TabsComponent implements OnInit {
-  movies: Movie[] = [];
+  trendingMovies: Movie[] = [];
+  popularMovies: Movie[] = [];
+  swipeable = true;
 
   constructor(private movieService: MovieService) {}
 
@@ -20,8 +22,8 @@ export class TabsComponent implements OnInit {
 
   private loadTrendingMovies() {
     this.movieService.getTrending().subscribe((response: MoviesResponse) => {
-      this.movies = response.results;
-      this.movies.sort(function (a, b) {
+      this.trendingMovies = response.results;
+      this.trendingMovies.sort(function (a, b) {
         return b.vote_average - a.vote_average;
       });
     });
@@ -29,11 +31,11 @@ export class TabsComponent implements OnInit {
 
   private loadPopularMovies() {
     this.movieService.getPopular().subscribe((response: MoviesResponse) => {
-      this.movies = response.results;
-      this.movies.sort(function (a, b) {
+      this.popularMovies = response.results;
+      this.popularMovies.sort(function (a, b) {
         return b.popularity - a.popularity;
       });
-      console.log(this.movies);
+      console.log(this.popularMovies);
     });
   }
 }
