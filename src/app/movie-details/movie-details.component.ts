@@ -1,9 +1,10 @@
+import { CastResponse } from './../models/castResponse';
 import { Movie } from './../models/movie';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MoviesResponse } from '../models/moviesResponse';
 import { MovieService } from '../services/movie.service';
 import { environment } from 'src/environments/environment';
+import { Cast } from '../models/cast';
 
 @Component({
   selector: 'app-movie-details',
@@ -11,8 +12,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
-  id: string;
-  movie;
+  id: number = 0;
+  movie: Movie = {} as Movie;
+  cast: Cast[] = [];
 
   apiPosterUrl: string = environment.apiPosterUrl;
 
@@ -22,19 +24,20 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getId();
-    this.loadMovie(this.id);
+    this.id = this.route.snapshot.params.id;
+    this.loadMovie();
+    this.loadCast();
   }
 
-  getId() {
-    this.route.params.subscribe((result) => {
-      this.id = result.id;
+  private loadMovie() {
+    this.movieService.get(this.id).subscribe((response: Movie) => {
+      this.movie = response;
     });
   }
 
-  private loadMovie(id) {
-    this.movieService.get(id).subscribe((response: MoviesResponse) => {
-      this.movie = response;
+  private loadCast() {
+    this.movieService.getCast(this.id).subscribe((response: CastResponse) => {
+      this.cast = response.cast;
     });
   }
 }

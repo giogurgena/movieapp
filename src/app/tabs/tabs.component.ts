@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../models/movie';
-import { MoviesResponse } from '../models/moviesResponse';
 import { MovieService } from '../services/movie.service';
 
 @Component({
@@ -9,39 +7,7 @@ import { MovieService } from '../services/movie.service';
   styleUrls: ['./tabs.component.css'],
 })
 export class TabsComponent implements OnInit {
-  trendingMovies: Movie[] = [];
-  popularMovies: Movie[] = [];
-  movies: Movie[] = [];
+  constructor() {}
 
-  constructor(private movieService: MovieService) {}
-
-  ngOnInit(): void {
-    this.loadTrendingMovies();
-    this.loadPopularMovies();
-    this.loadMovies();
-  }
-
-  private loadTrendingMovies() {
-    this.movieService.getTrending().subscribe((response: MoviesResponse) => {
-      this.trendingMovies = response.results;
-      this.trendingMovies.sort(function (a, b) {
-        return b.vote_average - a.vote_average;
-      });
-    });
-  }
-
-  private loadPopularMovies() {
-    this.movieService.getPopular().subscribe((response: MoviesResponse) => {
-      this.popularMovies = response.results;
-      this.popularMovies.sort(function (a, b) {
-        return b.popularity - a.popularity;
-      });
-    });
-  }
-
-  private loadMovies() {
-    this.movieService.getAll().subscribe((response: MoviesResponse) => {
-      this.movies = response.results;
-    });
-  }
+  ngOnInit(): void {}
 }
