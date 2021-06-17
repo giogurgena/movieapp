@@ -10,24 +10,20 @@ import { MovieService } from '../services/movie.service';
 })
 export class SearchComponent implements OnInit {
   movies: Movie[] = [];
-  title: string;
+  title: string = '';
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.loadMovies();
+    this.loadMovies(this.title);
   }
 
   Search() {
-    this.movies = this.movies.filter((res) => {
-      return res.title
-        .toLocaleLowerCase()
-        .match(this.title.toLocaleLowerCase());
-    });
+    this.loadMovies(this.title);
   }
 
-  private loadMovies() {
-    this.movieService.getMovies().subscribe((response: MoviesResponse) => {
+  private loadMovies(query: string) {
+    this.movieService.search(query).subscribe((response: MoviesResponse) => {
       this.movies = response.results;
     });
   }

@@ -40,7 +40,7 @@ export class TabsComponent implements OnInit {
   }
 
   private loadMovies() {
-    this.movieService.getMovies().subscribe((response: MoviesResponse) => {
+    this.movieService.getAll().subscribe((response: MoviesResponse) => {
       this.movies = response.results;
     });
   }

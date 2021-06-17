@@ -16,13 +16,13 @@ export class MovieService {
     this.apiKey = environment.apiKey;
   }
 
-  getMovies(): Observable<MoviesResponse> {
+  getAll(): Observable<MoviesResponse> {
     return this.http.get<MoviesResponse>(
       `${this.apiUrl}/movie/now_playing?api_key=${this.apiKey}`
     );
   }
 
-  getMovie(id): Observable<MoviesResponse> {
+  get(id: number): Observable<MoviesResponse> {
     return this.http.get<MoviesResponse>(
       `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`
     );
@@ -37,6 +37,12 @@ export class MovieService {
   getPopular(): Observable<MoviesResponse> {
     return this.http.get<MoviesResponse>(
       `${this.apiUrl}/movie/popular?api_key=${this.apiKey}`
+    );
+  }
+
+  search(query: string): Observable<MoviesResponse> {
+    return this.http.get<MoviesResponse>(
+      `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
     );
   }
 }

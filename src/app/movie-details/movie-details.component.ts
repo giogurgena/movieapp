@@ -33,7 +33,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   private loadMovie(id) {
-    this.movieService.getMovie(id).subscribe((response: MoviesResponse) => {
+    this.movieService.get(id).subscribe((response: MoviesResponse) => {
       this.movie = response;
     });
   }
