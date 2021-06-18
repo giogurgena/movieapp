@@ -53,14 +53,9 @@
       [loop]="true"
       [cellWidth]="1000"
     >
-      <div class="carousel-cell col s6 m4 l2">
-        <app-cast *ngFor="let actor of cast" [actor]="actor"></app-cast>
+      <div class="carousel-cell col s6 m4 l2" *ngFor="let actor of cast">
+        <app-cast [actor]="actor"></app-cast>
       </div>
     </carousel>
-    <!-- <app-cast
-      *ngFor="let actor of cast"
-      [actor]="actor"
-      class="col s6 m4 l2"
-    ></app-cast> -->
   </div>
 </div>
