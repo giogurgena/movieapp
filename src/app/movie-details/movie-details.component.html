@@ -43,3 +43,13 @@
     </div>
   </div>
 </div>
+<div class="container cast">
+  <h3>Cast And Crew</h3>
+  <div class="row">
+    <app-cast
+      *ngFor="let actor of cast"
+      [actor]="actor"
+      class="col s6 m4 l2"
+    ></app-cast>
+  </div>
+</div>

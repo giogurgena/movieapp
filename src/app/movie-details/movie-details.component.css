@@ -1,5 +1,6 @@
 .details {
   margin-top: 20px;
+  border-bottom: 1px solid white;
 }
 
 .poster img {
@@ -31,4 +32,9 @@
 
 .buttons .btn {
   margin: 15px;
+}
+
+.cast {
+  font-family: sans-serif;
+  color: white;
 }

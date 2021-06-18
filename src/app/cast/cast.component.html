@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-image">
+    <img
+      *ngIf="actor.profile_path; else backdropNoposter"
+      src="{{ apiPosterUrl }}{{ actor.profile_path }}"
+    />
+    <ng-template #backdropNoposter>
+      <img src="../../assets/images/no-poster.jpg" />
+    </ng-template>
+  </div>
+  <div class="card-content">
+    <span class="card-title">{{ actor.character }}</span>
+    <p>
+      {{ actor.known_for_department }}
+    </p>
+  </div>
+</div>

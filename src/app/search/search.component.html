@@ -1,11 +1,21 @@
 <div class="container">
   <app-tabs></app-tabs>
   <div class="search">
-    <input type="text" [(ngModel)]="title" (ngModelChange)="Search()" placeholder="Search...">
+    <input
+      type="text"
+      [(ngModel)]="title"
+      (ngModelChange)="Search()"
+      placeholder="Search..."
+      autofocus
+    />
     <div class="row">
       <div class="movies">
-        <app-movie *ngFor="let movie of movies"  [movie]="movie" class="col s6 m4 l2">
-      </app-movie>
+        <app-movie
+          *ngFor="let movie of movies"
+          [movie]="movie"
+          class="col s6 m4 l2"
+        >
+        </app-movie>
       </div>
     </div>
   </div>

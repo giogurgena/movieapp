@@ -38,6 +38,7 @@ export class MovieDetailsComponent implements OnInit {
   private loadCast() {
     this.movieService.getCast(this.id).subscribe((response: CastResponse) => {
       this.cast = response.cast;
+      console.log(this.cast);
     });
   }
 }

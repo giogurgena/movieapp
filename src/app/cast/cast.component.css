@@ -1,0 +1,10 @@
+.card-content {
+  background-color: black;
+}
+.card-content p {
+  font-size: 80%;
+}
+
+.card-title {
+  font-size: 90%;
+}

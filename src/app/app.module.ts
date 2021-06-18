@@ -17,6 +17,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { PopularComponent } from './popular/popular.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { CastComponent } from './cast/cast.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     MovieDetailsComponent,
     PopularComponent,
     SearchComponent,
+    CastComponent,
   ],
   imports: [
     BrowserModule,
