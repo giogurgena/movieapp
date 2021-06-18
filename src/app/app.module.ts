@@ -18,6 +18,7 @@ import { PopularComponent } from './popular/popular.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CastComponent } from './cast/cast.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CastComponent } from './cast/cast.component';
     MaterializeButtonModule,
     MaterializeCardModule,
     FormsModule,
+    IvyCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
