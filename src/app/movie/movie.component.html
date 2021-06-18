@@ -1,17 +1,27 @@
 <div class="movie-card-wrapper">
   <div class="row movie-card">
-      
     <div class="col">
       <div class="card">
         <div class="card-image">
-          <img src={{apiPosterUrl}}{{movie.poster_path}}>
+          <img
+            *ngIf="movie.poster_path; else elseBlock"
+            src="{{ apiPosterUrl }}{{ movie.poster_path }}"
+          />
+          <ng-template #elseBlock>
+            <img src="../../assets/images/no-poster.jpg" />
+          </ng-template>
         </div>
         <div class="card-content">
-          <p>{{movie.title}}</p>
-          <p>{{movie.release_date}}</p>
+          <p>{{ movie.title }}</p>
+          <p>{{ movie.release_date }}</p>
         </div>
-        <div class="hover" >
-          <button class="btn btn-primary view-button" routerLink="/movie-details/{{movie.id}}">View Details</button>
+        <div class="hover">
+          <button
+            class="btn btn-primary view-button"
+            routerLink="/movie-details/{{ movie.id }}"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
